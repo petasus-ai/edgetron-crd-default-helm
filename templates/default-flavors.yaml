@@ -1,0 +1,59 @@
+---
+apiVersion: "kubevirt.io/v1"
+kind: Flavor
+metadata:
+  name: m1.small
+spec:
+  name: m1.small
+  description: A small size VM flavor
+  vcpus: 1
+  ram: 2048
+  rootDisk: 20
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: Flavor
+metadata:
+  name: m1.medium
+spec:
+  name: m1.medium
+  description: A medium size VM flavor
+  vcpus: 2
+  ram: 4096
+  rootDisk: 40
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: Flavor
+metadata:
+  name: m1.large
+spec:
+  name: m1.large
+  description: A large size VM flavor
+  vcpus: 4
+  ram: 8192
+  rootDisk: 80
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: Flavor
+metadata:
+  name: m1.xlarge
+spec:
+  name: m1.xlarge
+  description: A xlarge size VM flavor
+  vcpus: 8
+  ram: 16384
+  rootDisk: 160
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: Flavor
+metadata:
+  name: m1.xxlarge
+spec:
+  name: m1.xxlarge
+  description: A xxlarge size VM flavor
+  vcpus: 16
+  ram: 32768
+  rootDisk: 160
