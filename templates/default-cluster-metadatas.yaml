@@ -1,0 +1,209 @@
+---
+apiVersion: "kubevirt.io/v1"
+kind: ClusterMetadata
+metadata:
+  name: antrea-v2.1
+spec:
+  name: Antrea
+  description: Antrea is a Kubernetes-native project that implements the Container Network Interface (CNI) and Kubernetes NetworkPolicy thereby providing network connectivity and security for pod workloads.
+  type: cni
+  vendor: VMWare
+  version: v2.1
+  compatibility: ["*"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: ClusterMetadata
+metadata:
+  name: cilium-v1.16.1
+spec:
+  name: Cilium
+  description: Cilium is an open source, cloud native solution for providing, securing, and observing network connectivity between workloads, fueled by the revolutionary Kernel technology eBPF.
+  type: cni
+  vendor: Isovalent
+  version: v1.16.1
+  compatibility: ["*"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: ClusterMetadata
+metadata:
+  name: openebs-v3.3.0
+spec:
+  name: OpenEBS
+  description: OpenEBS is the most widely deployed and easy to use open-source storage solution for Kubernetes.
+  type: csi
+  vendor: OpenEBS
+  version: v3.3.0
+  compatibility: ["*"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: ClusterMetadata
+metadata:
+  name: dashboard-v2.5.0
+spec:
+  name: Dashboard
+  description: Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
+  type: ui
+  vendor: Kubernetes
+  version: v2.5.0
+  compatibility: ["*"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: ClusterMetadata
+metadata:
+  name: kubesphere-v3.4.1
+spec:
+  name: KubeSphere
+  description: KubeSphere is a distributed operating system for cloud-native application management, using Kubernetes as its kernel. It provides a plug-and-play architecture, allowing third-party applications to be seamlessly integrated into its ecosystem.
+  type: ui
+  vendor: QingCloud
+  version: v3.4.1
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: ClusterMetadata
+metadata:
+  name: purelb-v0.6.0
+spec:
+  name: PureLB
+  description: PureLB is a Service Load Balancer Controller for Kubernetes. A LoadBalancer is a Service type that allows configuration of network components external to Kubernetes to enable network access to the specified application resources.
+  type: elb
+  vendor: PureLB
+  version: v0.6.0
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: almalinux-9
+spec:
+  description: AlmaLinux OS is an open-source, community-driven Linux operating system that fills the gap left by the discontinuation of the CentOS Linux stable release. AlmaLinux OS is a 1:1 binary compatible clone of RHEL® guided and built by the community.
+  name: almalinux-9
+  type: os
+  vendor: AlmaLinux OS Foundation
+  version: "9.5"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: rocky-9
+spec:
+  description: Rocky Linux is an open-source enterprise operating system designed to be 100% bug-for-bug compatible with Red Hat Enterprise Linux®.
+  name: rocky-9
+  type: os
+  vendor: RESF
+  version: "9.5"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ubuntu-2204
+spec:
+  description: Ubuntu is an open source software operating system that runs from the desktop, to the cloud, to all your internet connected things.
+  name: ubuntu-2204
+  type: os
+  vendor: Canonical
+  version: "22.04"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-lma-v3.4.1
+spec:
+  description: Provide a set of observability features including Logging, Monitoring and Alerting
+  name: lma
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-devops-v3.4.1
+spec:
+  description: Provide a series of DevOps and GitOps tools including Jenkins, ArgoCD, S2I and B2I.
+  name: devops
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-audit-v3.4.1
+spec:
+  description: Provide a security-relevant chronological set of records, recording the sequence of activities happening on the platform, initiated by different tenants.
+  name: audit
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-security-v3.4.1
+spec:
+  description: Provide admission policy and rule management, A validating (mutating TBA) webhook that enforces CRD-based policies executed by Open Policy Agent.
+  name: security
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-servicemesh-v3.4.1
+spec:
+  description: Provide fine-grained traffic management, observability and tracing, and visualized traffic topology.
+  name: servicemesh
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-network-v3.4.1
+spec:
+  description: Provide a set of networking features including tenancy based traffic isolation and network topology observability.
+  name: network
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: ks-appstore-v3.4.1
+spec:
+  description: Provide an App Store that is accessible to all platform tenants.
+  name: appstore
+  type: feature
+  vendor: kubesphere
+  version: "v3.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  name: kubeeye-v1.0.0-beta
+spec:
+  compatibility:
+  - '*'
+  description: KubeEye is an inspection tool for Kubernetes. It discovers whether Kubernetes resources, cluster components, cluster nodes, and other configurations comply with best practices and makes modification suggestions accordingly.
+  name: kubeeye
+  type: plugin
+  vendor: kubesphere
+  version: v1.0.0-beta
