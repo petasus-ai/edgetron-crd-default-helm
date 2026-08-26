@@ -1,0 +1,43 @@
+---
+apiVersion: kubevirt.io/v1
+kind: SecurityGroup
+metadata:
+  name: c5071a6b-d606-4fde-86c1-6bcc3160bb28
+spec:
+  description: Allow all egress traffic
+  id: c5071a6b-d606-4fde-86c1-6bcc3160bb28
+  name: default
+  project: default
+
+---
+apiVersion: kubevirt.io/v1
+kind: SecurityGroupRule
+metadata:
+  name: af4265a5-ef0f-4cff-ada2-14b4958e0909
+spec:
+  direction: egress
+  id: af4265a5-ef0f-4cff-ada2-14b4958e0909
+  remoteIpPrefix: 0.0.0.0/0
+  securityGroupId: c5071a6b-d606-4fde-86c1-6bcc3160bb28
+
+---
+apiVersion: kubevirt.io/v1
+kind: SecurityGroup
+metadata:
+  name: eb99fdd0-560f-4f85-b3a4-3780a22f3a00
+spec:
+  description: Allow all ingress traffic
+  id: eb99fdd0-560f-4f85-b3a4-3780a22f3a00
+  name: ingress-all
+  project: default
+
+---
+apiVersion: kubevirt.io/v1
+kind: SecurityGroupRule
+metadata:
+  name: d87d5f65-302c-4338-8c79-fd62b555305c
+spec:
+  direction: ingress
+  id: d87d5f65-302c-4338-8c79-fd62b555305c
+  remoteIpPrefix: 0.0.0.0/0
+  securityGroupId: eb99fdd0-560f-4f85-b3a4-3780a22f3a00
