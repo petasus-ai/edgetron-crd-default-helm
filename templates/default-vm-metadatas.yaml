@@ -1,0 +1,115 @@
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: 80751623-d724-4415-9ed7-8c491505456e
+spec:
+  description: AlmaLinux OS is an open-source, community-driven Linux operating system that fills the gap left by the discontinuation of the CentOS Linux stable release. AlmaLinux OS is a 1:1 binary compatible clone of RHEL® guided and built by the community.
+  name: almalinux
+  type: os
+  vendor: AlmaLinux OS Foundation
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: c961b2fe-54ac-4963-bc03-5ab73de1981c
+spec:
+  description: Rocky Linux is an open-source enterprise operating system designed to be 100% bug-for-bug compatible with Red Hat Enterprise Linux®.
+  name: rocky
+  type: os
+  vendor: RESF
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: 4477da25-01ac-462d-a359-a7073c8da531
+spec:
+  description: Ubuntu is the modern, open source operating system on Linux for the enterprise server, desktop, cloud, and IoT.
+  name: ubuntu
+  type: os
+  vendor: Canonical
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: ee8131ec-d9ce-47e7-bad7-c64ca80cc4aa
+spec:
+  description: Red Hat Enterprise Linux is the world’s leading enterprise Linux platform,* certified on hundreds of clouds and with thousands of hardware and software vendors.
+  name: rhel
+  type: os
+  vendor: RedHat
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: c90215d3-2994-44f6-8751-734075aed4ed
+spec:
+  description: Fedora is a free and open source OS platform for hardware, clouds and containers. Based on the Linux OS kernel architecture, Fedora Linux is a user-friendly OS that enables users to perform their tasks easily and efficiently with minimal friction.
+  name: fedora
+  type: os
+  vendor: RedHat
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: 886762cb-f217-4a59-9d5d-2dbe93baa30f
+spec:
+  description: The CentOS Project is a community-driven free software effort focused around the goal of providing a rich base platform for open source communities to build upon.
+  name: centos
+  type: os
+  vendor: RedHat
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: e50f19d2-d601-42e3-aab5-b6a7bcefce08
+spec:
+  description: Debian GNU/Linux is a particular distribution of the Linux operating system, and numerous packages that run on it.
+  name: debian
+  type: os
+  vendor: Debian
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: a9a8ca68-aa5f-4445-85e1-41045c329f74
+spec:
+  description: openSUSE is an open-source community project with Linux-based distributions that is sponsored by SUSE Software Solutions Germany GmbH and other companies.
+  name: opensuse
+  type: os
+  vendor: SUSE
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  name: 87bb5e85-d04b-4138-8cc4-f69b62830355
+spec:
+  description: Microsoft Windows is a group of several proprietary graphical operating system families developed and marketed by Microsoft.
+  name: windows
+  type: os
+  vendor: Microsoft
+
+---
+apiVersion: kubevirt.io/v1
+kind: VmMetadata
+metadata:
+  labels:
+    distro_type: str
+    kind: jupyter_lab
+    port: int
+    token: hex-rand-48
+  name: jupyter
+spec:
+  description: The latest web-based interactive development environment for notebooks,
+    code, and data.
+  name: Jupyter
+  type: addon
+  vendor: jupyter
