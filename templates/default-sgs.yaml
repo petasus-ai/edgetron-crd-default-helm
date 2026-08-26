@@ -1,0 +1,20 @@
+---
+apiVersion: kubevirt.io/v1
+kind: SecurityGroup
+metadata:
+  name: default
+spec:
+  description: Allow all egress traffic
+  id: c5071a6b-d606-4fde-86c1-6bcc3160bb28
+  name: default
+
+---
+apiVersion: kubevirt.io/v1
+kind: SecurityGroupRule
+metadata:
+  name: af4265a5-ef0f-4cff-ada2-14b4958e0909
+spec:
+  direction: egress
+  id: af4265a5-ef0f-4cff-ada2-14b4958e0909
+  remoteIpPrefix: 0.0.0.0/0
+  securityGroupId: c5071a6b-d606-4fde-86c1-6bcc3160bb28
