@@ -1,18 +1,18 @@
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: ClusterMetadata
 metadata:
-  name: cilium-v1.16.1
+  name: cilium-v1.19.4
 spec:
   name: Cilium
   description: Cilium is an open source, cloud native solution for providing, securing, and observing network connectivity between workloads, fueled by the revolutionary Kernel technology eBPF.
   type: cni
   vendor: Isovalent
-  version: v1.16.1
+  version: v1.19.4
   compatibility: ["*"]
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: ClusterMetadata
 metadata:
   name: openebs-v3.3.0
@@ -25,7 +25,7 @@ spec:
   compatibility: ["*"]
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: ClusterMetadata
 metadata:
   name: dashboard-v2.5.0
@@ -38,7 +38,7 @@ spec:
   compatibility: ["*"]
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: ClusterMetadata
 metadata:
   name: kubesphere-v3.4.1
@@ -50,7 +50,7 @@ spec:
   version: v3.4.1
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: ClusterMetadata
 metadata:
   name: purelb-v0.6.0
@@ -62,7 +62,7 @@ spec:
   version: v0.6.0
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: almalinux-9
@@ -74,7 +74,7 @@ spec:
   version: "9.5"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: rocky-9
@@ -86,7 +86,7 @@ spec:
   version: "9.5"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ubuntu-2404
@@ -98,7 +98,7 @@ spec:
   version: "24.04"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-lma-v3.4.1
@@ -110,7 +110,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-devops-v3.4.1
@@ -122,7 +122,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-audit-v3.4.1
@@ -134,7 +134,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-security-v3.4.1
@@ -146,7 +146,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-servicemesh-v3.4.1
@@ -158,7 +158,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-network-v3.4.1
@@ -170,7 +170,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: ks-appstore-v3.4.1
@@ -182,7 +182,7 @@ spec:
   version: "v3.4.1"
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   name: kubeeye-v1.0.0-beta
@@ -195,7 +195,7 @@ spec:
   vendor: kubesphere
   version: v1.0.0-beta
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
@@ -210,7 +210,7 @@ spec:
   vendor: NVIDIA
   version: "580.82.07"
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
@@ -225,7 +225,7 @@ spec:
   vendor: NVIDIA
   version: "580.126.20"
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
@@ -239,37 +239,3 @@ spec:
   type: addon
   vendor: NVIDIA
   version: "26.1.1"
----
-apiVersion: kubevirt.io/v1
-kind: ClusterMetadata
-metadata:
-  labels:
-    addons.petasus.io/dra: "1.4.0"
-  name: dranet-1.4.0
-spec:
-  compatibility:
-    - '*'
-  description: DraNet (DRA netdev driver — allocate SR-IOV/RDMA netdevs to pods via Dynamic Resource Allocation, chart 1.4.0)
-  name: dranet
-  type: addon
-  vendor: Kubernetes SIGs
-  version: "1.4.0"
----
-apiVersion: kubevirt.io/v1
-kind: ClusterMetadata
-metadata:
-  labels:
-    addons.petasus.io/gpu-dra: "0.4.1"
-  name: gpu-dra-0.4.1
-spec:
-  compatibility:
-    - '*'
-  description: >-
-    DRA Driver for NVIDIA GPUs (chart 0.4.1) — allocate GPUs through Dynamic Resource
-    Allocation so one claim can pin a GPU and its fabric NIC to the same PCIe root.
-    Replaces the GPU operator device plugin: nvidia.com/gpu is removed from the nodes and
-    GPU workloads must move to ResourceClaims, so install only on clusters built for it.
-  name: gpu-dra
-  type: addon
-  vendor: Kubernetes SIGs
-  version: "0.4.1"

@@ -13,10 +13,10 @@
 # limitations under the License.
 
 apiVersion: v1
-appVersion: "3.5.0"
+appVersion: "3.5.0-cilium"
 description: A Helm chart for edgetron CRD default deployment
 name: edgetron-crd-default
-version: 3.5.0
+version: 3.5.0-cilium
 keywords:
   - mec
   - kubevirt

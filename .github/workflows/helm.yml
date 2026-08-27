@@ -2,7 +2,7 @@ name: Helm
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master-cilium ]
 
 jobs:
   publish:
@@ -33,8 +33,9 @@ jobs:
         run: |
           git config --global user.email "opensonaproject@gmail.com"
           git config --global user.name "edgestack-bot"
-          CHART_PACKAGE_NAME="edgetron-crd-default-3.5.0.tgz"
+          CHART_PACKAGE_NAME="edgetron-crd-default-3.5.0-cilium.tgz"
           cd edgestack-helm
           git add "$CHART_PACKAGE_NAME"
           git commit -m "$CHART_PACKAGE_NAME"
+          git pull --rebase origin master
           git push origin master

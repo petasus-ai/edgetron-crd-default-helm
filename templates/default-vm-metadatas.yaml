@@ -1,5 +1,5 @@
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: 80751623-d724-4415-9ed7-8c491505456e
@@ -10,7 +10,7 @@ spec:
   vendor: AlmaLinux OS Foundation
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: c961b2fe-54ac-4963-bc03-5ab73de1981c
@@ -21,7 +21,7 @@ spec:
   vendor: RESF
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: 4477da25-01ac-462d-a359-a7073c8da531
@@ -32,7 +32,7 @@ spec:
   vendor: Canonical
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: ee8131ec-d9ce-47e7-bad7-c64ca80cc4aa
@@ -43,7 +43,7 @@ spec:
   vendor: RedHat
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: c90215d3-2994-44f6-8751-734075aed4ed
@@ -54,7 +54,7 @@ spec:
   vendor: RedHat
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: 886762cb-f217-4a59-9d5d-2dbe93baa30f
@@ -65,7 +65,7 @@ spec:
   vendor: RedHat
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: e50f19d2-d601-42e3-aab5-b6a7bcefce08
@@ -76,7 +76,7 @@ spec:
   vendor: Debian
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: a9a8ca68-aa5f-4445-85e1-41045c329f74
@@ -87,7 +87,7 @@ spec:
   vendor: SUSE
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   name: 87bb5e85-d04b-4138-8cc4-f69b62830355
@@ -98,7 +98,7 @@ spec:
   vendor: Microsoft
 
 ---
-apiVersion: kubevirt.io/v1
+apiVersion: petasus.io/v1
 kind: VmMetadata
 metadata:
   labels:

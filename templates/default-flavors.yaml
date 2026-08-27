@@ -1,5 +1,5 @@
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: Flavor
 metadata:
   name: m1.small
@@ -11,7 +11,7 @@ spec:
   rootDisk: 20
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: Flavor
 metadata:
   name: m1.medium
@@ -23,7 +23,7 @@ spec:
   rootDisk: 40
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: Flavor
 metadata:
   name: m1.large
@@ -35,7 +35,7 @@ spec:
   rootDisk: 80
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: Flavor
 metadata:
   name: m1.xlarge
@@ -47,7 +47,7 @@ spec:
   rootDisk: 160
 
 ---
-apiVersion: "kubevirt.io/v1"
+apiVersion: "petasus.io/v1"
 kind: Flavor
 metadata:
   name: m1.xxlarge
