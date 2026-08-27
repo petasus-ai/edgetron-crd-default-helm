@@ -224,3 +224,37 @@ spec:
   type: addon
   vendor: NVIDIA
   version: "580.126.20"
+---
+apiVersion: petasus.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/dra: "1.4.0"
+  name: dranet-1.4.0
+spec:
+  compatibility:
+    - '*'
+  description: DraNet (DRA netdev driver — allocate SR-IOV/RDMA netdevs to pods via Dynamic Resource Allocation, chart 1.4.0)
+  name: dranet
+  type: addon
+  vendor: Kubernetes SIGs
+  version: "1.4.0"
+---
+apiVersion: petasus.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/gpu-dra: "0.4.1"
+  name: gpu-dra-0.4.1
+spec:
+  compatibility:
+    - '*'
+  description: >-
+    DRA Driver for NVIDIA GPUs (chart 0.4.1) — allocate GPUs through Dynamic Resource
+    Allocation so one claim can pin a GPU and its fabric NIC to the same PCIe root.
+    Replaces the GPU operator device plugin: nvidia.com/gpu is removed from the nodes and
+    GPU workloads must move to ResourceClaims, so install only on clusters built for it.
+  name: gpu-dra
+  type: addon
+  vendor: Kubernetes SIGs
+  version: "0.4.1"
