@@ -229,21 +229,6 @@ apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
-    addons.petasus.io/network-operator: "26.1.1"
-  name: nvidia-network-operator-26.1.1
-spec:
-  compatibility:
-    - '*'
-  description: NVIDIA Network Operator (Mellanox SR-IOV / RDMA stack, chart 26.1.1)
-  name: nvidia-network-operator
-  type: addon
-  vendor: NVIDIA
-  version: "26.1.1"
----
-apiVersion: kubevirt.io/v1
-kind: ClusterMetadata
-metadata:
-  labels:
     addons.petasus.io/dra: "1.4.0"
   name: dranet-1.4.0
 spec:
