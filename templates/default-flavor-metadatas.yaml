@@ -1,0 +1,54 @@
+---
+apiVersion: "kubevirt.io/v1"
+kind: FlavorMetadata
+metadata:
+  name: general
+spec:
+  name: general
+  description: Balanced vCPU and memory for a wide range of workloads.
+  type: instance_type
+  families: ["m1", "t1"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: FlavorMetadata
+metadata:
+  name: compute
+spec:
+  name: compute
+  description: High vCPU-to-memory ratio for compute-bound workloads.
+  type: instance_type
+  families: ["c1"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: FlavorMetadata
+metadata:
+  name: memory
+spec:
+  name: memory
+  description: High memory-to-vCPU ratio for memory-intensive workloads.
+  type: instance_type
+  families: ["r1"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: FlavorMetadata
+metadata:
+  name: storage
+spec:
+  name: storage
+  description: Large local ephemeral disk for storage-intensive workloads.
+  type: instance_type
+  families: ["i1"]
+
+---
+apiVersion: "kubevirt.io/v1"
+kind: FlavorMetadata
+metadata:
+  name: accelerated
+spec:
+  name: accelerated
+  description: GPU or other hardware accelerators attached.
+  type: instance_type
+  families: ["g1", "p1"]
