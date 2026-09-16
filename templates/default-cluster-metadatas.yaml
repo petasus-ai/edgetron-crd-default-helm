@@ -199,36 +199,6 @@ apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
-    addons.petasus.io/nvidia-gpu-operator: "580.82.07"
-  name: nvidia-gpu-operator-580.82.07
-spec:
-  compatibility:
-    - '*'
-  description: NVIDIA GPU Operator (driver 580.82.07)
-  name: nvidia-gpu-operator
-  type: addon
-  vendor: NVIDIA
-  version: "580.82.07"
----
-apiVersion: kubevirt.io/v1
-kind: ClusterMetadata
-metadata:
-  labels:
-    addons.petasus.io/nvidia-gpu-operator: "580.126.20"
-  name: nvidia-gpu-operator-580.126.20
-spec:
-  compatibility:
-    - '*'
-  description: NVIDIA GPU Operator (driver 580.126.20)
-  name: nvidia-gpu-operator
-  type: addon
-  vendor: NVIDIA
-  version: "580.126.20"
----
-apiVersion: kubevirt.io/v1
-kind: ClusterMetadata
-metadata:
-  labels:
     addons.petasus.io/dra: "1.4.0"
   name: dranet-1.4.0
 spec:
@@ -258,3 +228,54 @@ spec:
   type: addon
   vendor: Kubernetes SIGs
   version: "0.4.1"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/nvidia-gpu-operator: "580.178.04"
+  name: nvidia-gpu-operator-580.178.04
+spec:
+  compatibility:
+    - ubuntu-2404
+    - rocky-9
+  description: NVIDIA GPU Operator (driver 580.178.04)
+  name: nvidia-gpu-operator
+  type: addon
+  vendor: NVIDIA
+  version: "580.178.04"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/nvidia-gpu-operator: "595.91.07"
+  name: nvidia-gpu-operator-595.91.07
+spec:
+  compatibility:
+    - ubuntu-2404
+    - rocky-9
+  description: NVIDIA GPU Operator (driver 595.91.07)
+  name: nvidia-gpu-operator
+  type: addon
+  vendor: NVIDIA
+  version: "595.91.07"
+
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/nvidia-gpu-operator: "610.57.04"
+  name: nvidia-gpu-operator-610.57.04
+spec:
+  compatibility:
+    - ubuntu-2404
+    - rocky-9
+  description: NVIDIA GPU Operator (driver 610.57.04)
+  name: nvidia-gpu-operator
+  type: addon
+  vendor: NVIDIA
+  version: "610.57.04"
