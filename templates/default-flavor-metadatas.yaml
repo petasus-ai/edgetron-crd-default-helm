@@ -7,7 +7,11 @@ spec:
   name: general
   description: Balanced vCPU and memory for a wide range of workloads.
   type: instance_type
-  families: ["m1", "t1"]
+  families:
+    - name: m1
+      description: Standard general purpose with a fixed vCPU-to-memory ratio.
+    - name: t1
+      description: Small general purpose for light or bursty workloads.
 
 ---
 apiVersion: "kubevirt.io/v1"
@@ -18,7 +22,9 @@ spec:
   name: compute
   description: High vCPU-to-memory ratio for compute-bound workloads.
   type: instance_type
-  families: ["c1"]
+  families:
+    - name: c1
+      description: Compute optimized with more vCPUs per GiB of memory.
 
 ---
 apiVersion: "kubevirt.io/v1"
@@ -29,7 +35,9 @@ spec:
   name: memory
   description: High memory-to-vCPU ratio for memory-intensive workloads.
   type: instance_type
-  families: ["r1"]
+  families:
+    - name: r1
+      description: Memory optimized with more GiB of memory per vCPU.
 
 ---
 apiVersion: "kubevirt.io/v1"
@@ -40,7 +48,9 @@ spec:
   name: storage
   description: Large local ephemeral disk for storage-intensive workloads.
   type: instance_type
-  families: ["i1"]
+  families:
+    - name: i1
+      description: Storage optimized with a large local ephemeral disk.
 
 ---
 apiVersion: "kubevirt.io/v1"
@@ -51,4 +61,8 @@ spec:
   name: accelerated
   description: GPU or other hardware accelerators attached.
   type: instance_type
-  families: ["g1", "p1"]
+  families:
+    - name: g1
+      description: GPU accelerated for graphics and inference workloads.
+    - name: p1
+      description: GPU accelerated for training and HPC workloads.
