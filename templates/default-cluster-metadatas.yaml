@@ -267,3 +267,26 @@ spec:
   type: addon
   vendor: NVIDIA
   version: "610.57.04"
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/nvsentinel: "v1.23.0"
+  name: nvsentinel-v1.23.0
+spec:
+  # Mirrors the GPU operator presets: NVSentinel is useless without them (DCGM service,
+  # driver pods), so it is offered on exactly the node OSes they support.
+  compatibility:
+    - ubuntu-2404
+    - rocky-9
+  description: >-
+    NVSentinel (chart v1.23.0) — NVIDIA's GPU fleet health monitor in detection-only mode:
+    the DCGM and syslog health monitors publish GPU, NVLink and NIC driver faults as node
+    conditions that carry a recommended action, which the management cluster turns into
+    machine remediation. Nothing is cordoned, drained or rebooted inside the cluster.
+    Requires the NVIDIA GPU Operator preset on the same cluster.
+  name: nvsentinel
+  type: addon
+  vendor: NVIDIA
+  version: "v1.23.0"
