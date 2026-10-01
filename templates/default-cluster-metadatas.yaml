@@ -281,11 +281,14 @@ spec:
     - ubuntu-2404
     - rocky-9
   description: >-
-    NVSentinel (chart v1.23.0) — NVIDIA's GPU fleet health monitor in detection-only mode:
-    the DCGM and syslog health monitors publish GPU, NVLink and NIC driver faults as node
-    conditions that carry a recommended action, which the management cluster turns into
-    machine remediation. Nothing is cordoned, drained or rebooted inside the cluster.
-    Requires the NVIDIA GPU Operator preset on the same cluster.
+    NVSentinel (chart v1.23.0) — NVIDIA's GPU fleet health monitor with its remediation
+    pipeline: a fatal GPU, NVLink or NIC driver fault found by the DCGM and syslog health
+    monitors cordons the node and drains it (running user pods are left 30 minutes to
+    finish, then force-deleted). A fault that needs a restart or a replacement is raised
+    as an external remediation request; the add-on never restarts or replaces a machine
+    itself, so the node stays cordoned until that is done outside the cluster. Any other
+    fatal fault keeps the node cordoned until the fault clears. Installs cert-manager
+    alongside. Requires the NVIDIA GPU Operator preset on the same cluster; amd64 only.
   name: nvsentinel
   type: addon
   vendor: NVIDIA
