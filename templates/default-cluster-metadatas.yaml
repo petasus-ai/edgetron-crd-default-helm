@@ -202,33 +202,18 @@ apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
-    addons.petasus.io/gpu-dra: "0.4.1"
-  name: gpu-dra-0.4.1
-spec:
-  compatibility:
-    - '*'
-  description: >-
-    DRA Driver for NVIDIA GPUs (chart 0.4.1) — allocate GPUs through Dynamic Resource
-    Allocation so one claim can pin a GPU and its fabric NIC to the same PCIe root.
-    Replaces the GPU operator device plugin: nvidia.com/gpu is removed from the nodes and
-    GPU workloads must move to ResourceClaims, so install only on clusters built for it.
-  name: gpu-dra
-  type: addon
-  vendor: Kubernetes SIGs
-  version: "0.4.1"
-
----
-apiVersion: kubevirt.io/v1
-kind: ClusterMetadata
-metadata:
-  labels:
     addons.petasus.io/nvidia-gpu-operator: "580.178.04"
   name: nvidia-gpu-operator-580.178.04
 spec:
   compatibility:
     - ubuntu-2404
     - rocky-9
-  description: NVIDIA GPU Operator (driver 580.178.04)
+  description: >-
+    NVIDIA GPU Operator (driver 580.178.04) with the DRA Driver for NVIDIA GPUs. GPUs are
+    allocated through Dynamic Resource Allocation: a pod requests one with nvidia.com/gpu,
+    as with the device plugin, or with a ResourceClaim, which can also pin the GPU and its
+    fabric NIC to the same PCIe root. The device plugin is not installed, so the nodes
+    report no nvidia.com/gpu capacity. Requires Kubernetes 1.36 or later.
   name: nvidia-gpu-operator
   type: addon
   vendor: NVIDIA
@@ -245,7 +230,12 @@ spec:
   compatibility:
     - ubuntu-2404
     - rocky-9
-  description: NVIDIA GPU Operator (driver 595.91.07)
+  description: >-
+    NVIDIA GPU Operator (driver 595.91.07) with the DRA Driver for NVIDIA GPUs. GPUs are
+    allocated through Dynamic Resource Allocation: a pod requests one with nvidia.com/gpu,
+    as with the device plugin, or with a ResourceClaim, which can also pin the GPU and its
+    fabric NIC to the same PCIe root. The device plugin is not installed, so the nodes
+    report no nvidia.com/gpu capacity. Requires Kubernetes 1.36 or later.
   name: nvidia-gpu-operator
   type: addon
   vendor: NVIDIA
@@ -262,7 +252,12 @@ spec:
   compatibility:
     - ubuntu-2404
     - rocky-9
-  description: NVIDIA GPU Operator (driver 610.57.04)
+  description: >-
+    NVIDIA GPU Operator (driver 610.57.04) with the DRA Driver for NVIDIA GPUs. GPUs are
+    allocated through Dynamic Resource Allocation: a pod requests one with nvidia.com/gpu,
+    as with the device plugin, or with a ResourceClaim, which can also pin the GPU and its
+    fabric NIC to the same PCIe root. The device plugin is not installed, so the nodes
+    report no nvidia.com/gpu capacity. Requires Kubernetes 1.36 or later.
   name: nvidia-gpu-operator
   type: addon
   vendor: NVIDIA
