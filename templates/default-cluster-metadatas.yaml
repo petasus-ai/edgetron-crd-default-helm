@@ -28,19 +28,6 @@ spec:
 apiVersion: "kubevirt.io/v1"
 kind: ClusterMetadata
 metadata:
-  name: dashboard-v2.5.0
-spec:
-  name: Dashboard
-  description: Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
-  type: ui
-  vendor: Kubernetes
-  version: v2.5.0
-  compatibility: ["*"]
-
----
-apiVersion: "kubevirt.io/v1"
-kind: ClusterMetadata
-metadata:
   name: kubesphere-v3.4.1
 spec:
   name: KubeSphere
