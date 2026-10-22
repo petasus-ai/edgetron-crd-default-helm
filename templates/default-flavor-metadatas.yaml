@@ -1,68 +1,73 @@
+{{- /*
+The default flavor instance types and their families. edgetron refuses to
+delete a default instance type or to remove a default family, but operators
+may add families to a default instance type. Helm replaces a list as a whole
+on upgrade, so each object also renders the families it holds in the
+cluster that are not the chart's (read with lookup); the chart's own
+families keep the chart's descriptions. On a first install, or with
+helm template, lookup finds nothing and only the defaults render.
+*/ -}}
+{{- $types := list
+  (dict "name" "general" "accelerated" false
+        "description" "Balanced vCPU and memory for a wide range of workloads."
+        "families" (list
+          (dict "name" "m1" "description" "Standard general purpose with a fixed vCPU-to-memory ratio.")
+          (dict "name" "t1" "description" "Small general purpose for light or bursty workloads.")))
+  (dict "name" "compute" "accelerated" false
+        "description" "High vCPU-to-memory ratio for compute-bound workloads."
+        "families" (list
+          (dict "name" "c1" "description" "Compute optimized with more vCPUs per GiB of memory.")))
+  (dict "name" "memory" "accelerated" false
+        "description" "High memory-to-vCPU ratio for memory-intensive workloads."
+        "families" (list
+          (dict "name" "r1" "description" "Memory optimized with more GiB of memory per vCPU.")))
+  (dict "name" "storage" "accelerated" false
+        "description" "Large local ephemeral disk for storage-intensive workloads."
+        "families" (list
+          (dict "name" "i1" "description" "Storage optimized with a large local ephemeral disk.")))
+  (dict "name" "accelerated" "accelerated" true
+        "description" "GPU or other hardware accelerators attached."
+        "families" (list
+          (dict "name" "g1" "description" "GPU accelerated for graphics and inference workloads.")
+          (dict "name" "p1" "description" "GPU accelerated for training and HPC workloads.")))
+}}
+{{- range $types }}
+{{- $own := list }}
+{{- range .families }}
+{{- $own = append $own .name }}
+{{- end }}
+{{- $live := lookup "kubevirt.io/v1" "FlavorMetadata" "" .name | default dict }}
 ---
 apiVersion: "kubevirt.io/v1"
 kind: FlavorMetadata
 metadata:
-  name: general
+  name: {{ .name }}
 spec:
-  name: general
-  description: Balanced vCPU and memory for a wide range of workloads.
+  name: {{ .name }}
+  description: {{ .description }}
   type: instance_type
+  accelerated: {{ .accelerated }}
+  default: true
   families:
-    - name: m1
-      description: Standard general purpose with a fixed vCPU-to-memory ratio.
-    - name: t1
-      description: Small general purpose for light or bursty workloads.
-
----
-apiVersion: "kubevirt.io/v1"
-kind: FlavorMetadata
-metadata:
-  name: compute
-spec:
-  name: compute
-  description: High vCPU-to-memory ratio for compute-bound workloads.
-  type: instance_type
-  families:
-    - name: c1
-      description: Compute optimized with more vCPUs per GiB of memory.
-
----
-apiVersion: "kubevirt.io/v1"
-kind: FlavorMetadata
-metadata:
-  name: memory
-spec:
-  name: memory
-  description: High memory-to-vCPU ratio for memory-intensive workloads.
-  type: instance_type
-  families:
-    - name: r1
-      description: Memory optimized with more GiB of memory per vCPU.
-
----
-apiVersion: "kubevirt.io/v1"
-kind: FlavorMetadata
-metadata:
-  name: storage
-spec:
-  name: storage
-  description: Large local ephemeral disk for storage-intensive workloads.
-  type: instance_type
-  families:
-    - name: i1
-      description: Storage optimized with a large local ephemeral disk.
-
----
-apiVersion: "kubevirt.io/v1"
-kind: FlavorMetadata
-metadata:
-  name: accelerated
-spec:
-  name: accelerated
-  description: GPU or other hardware accelerators attached.
-  type: instance_type
-  families:
-    - name: g1
-      description: GPU accelerated for graphics and inference workloads.
-    - name: p1
-      description: GPU accelerated for training and HPC workloads.
+{{- range .families }}
+    - name: {{ .name }}
+      description: {{ .description }}
+      default: true
+{{- end }}
+{{- range (dig "spec" "families" (list) $live) }}
+{{- $name := "" }}
+{{- $description := "" }}
+{{- if kindIs "map" . }}
+{{- $name = get . "name" | toString | lower }}
+{{- $description = get . "description" | default "" | toString }}
+{{- else }}
+{{- $name = toString . | lower }}
+{{- end }}
+{{- if and $name (not (has $name $own)) }}
+    - name: {{ $name }}
+{{- if $description }}
+      description: {{ $description | quote }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{ end }}
