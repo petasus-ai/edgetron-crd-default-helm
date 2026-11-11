@@ -180,3 +180,28 @@ spec:
   type: addon
   vendor: NVIDIA
   version: "v1.26.0"
+---
+apiVersion: kubevirt.io/v1
+kind: ClusterMetadata
+metadata:
+  labels:
+    addons.petasus.io/gpu-validation: "v0.11.0"
+  name: gpu-validation-v0.11.0
+spec:
+  # Mirrors the GPU operator presets: validation runs DCGM diagnostics and NCCL tests on
+  # the GPUs the operator exposes, so it is offered on exactly the node OSes they support.
+  compatibility:
+    - ubuntu-2404
+    - rocky-9
+  description: >-
+    GPU validation engine (NVIDIA Cluster Readiness Engine v0.11.0, with Kubeflow Trainer)
+    behind the cluster's GPU Validation tab: runs DCGM diagnostics and an NVLink NCCL test
+    on the nodes of a GPU node pool and reports each node's result and the measured
+    bandwidth. The add-on itself only runs the engine's controllers; GPU workloads start
+    when a validation is run from the tab, and a run takes every GPU of the pool's nodes,
+    so it cannot start while pods hold them. Requires the NVIDIA GPU Operator preset on
+    the same cluster and Kubernetes 1.36 or later.
+  name: gpu-validation
+  type: addon
+  vendor: NVIDIA
+  version: "v0.11.0"
