@@ -77,16 +77,16 @@ apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
-    addons.petasus.io/dra: "1.4.0"
-  name: dranet-1.4.0
+    addons.petasus.io/dra: "1.5.0"
+  name: dranet-1.5.0
 spec:
   compatibility:
     - '*'
-  description: DraNet (DRA netdev driver — allocate SR-IOV/RDMA netdevs to pods via Dynamic Resource Allocation, chart 1.4.0)
+  description: DraNet (DRA netdev driver — allocate SR-IOV/RDMA netdevs to pods via Dynamic Resource Allocation, chart 1.5.0)
   name: dranet
   type: addon
   vendor: Kubernetes SIGs
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
