@@ -157,8 +157,8 @@ apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
 metadata:
   labels:
-    addons.petasus.io/nvsentinel: "v1.32.0"
-  name: nvsentinel-v1.32.0
+    addons.petasus.io/nvsentinel: "v1.33.0"
+  name: nvsentinel-v1.33.0
 spec:
   # Mirrors the GPU operator presets: NVSentinel is useless without them (DCGM service,
   # driver pods), so it is offered on exactly the node OSes they support.
@@ -166,7 +166,7 @@ spec:
     - ubuntu-2404
     - rocky-9
   description: >-
-    NVSentinel (chart v1.32.0) — NVIDIA's GPU fleet health monitor with its remediation
+    NVSentinel (chart v1.33.0) — NVIDIA's GPU fleet health monitor with its remediation
     pipeline: a fatal GPU, NVLink or NIC driver fault found by the DCGM and syslog health
     monitors cordons the node and drains it (running user pods are left 30 minutes to
     finish, then force-deleted). A fault that needs a GPU reset is repaired in the
@@ -179,7 +179,7 @@ spec:
   name: nvsentinel
   type: addon
   vendor: NVIDIA
-  version: "v1.32.0"
+  version: "v1.33.0"
 ---
 apiVersion: kubevirt.io/v1
 kind: ClusterMetadata
